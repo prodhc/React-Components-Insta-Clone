@@ -3,19 +3,17 @@ import Comment from './Comment';
 import './Comments.css';
 
 const Comments = props => {
-  // 🔥 Make sure the parent of Comments is passing the right props!
-  const { comments } = props.comments;
+	// 🔥 Make sure the parent of Comments is passing the right props!
+	const { comments } = props;
 
-  return (
-<div className="comments-container-wrapper">
-      {
-        comments.map( comment => {
-        return <Comment key={comment.id} comment={comment}/>
-      })
-      }
-      {/* map through the comments prop and render a Comment for every piece of data */}
-    </div>
-  );
+	return (
+		<div>
+			{/* map through the comments prop and render a Comment for every piece of data */}
+			{comments.map(comment => {
+				return <Comment comment={comment} key={comment.id} />;
+			})}
+		</div>
+	);
 };
 
 export default Comments;
